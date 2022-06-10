@@ -4,21 +4,27 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         Create create = new Create();
+        String[] path = new String[]
+                {
+                        "C:\\Games\\src",
+                        "C:\\Games\\res",
+                        "C:\\Games\\savegames",
+                        "C:\\Games\\temp",
+                        "C:\\Games\\src\\main",
+                        "C:\\Games\\src\\test",
+                        "C:\\Games\\res\\drawables",
+                        "C:\\Games\\res\\vectors",
+                        "C:\\Games\\res\\icons"
+                };
 
-        create.createDir("C:\\Games\\src", "src");
-        create.createDir("C:\\Games\\res", "res");
-        create.createDir("C:\\Games\\savegames", "savegames");
-        create.createDir("C:\\Games\\temp", "temp");
-        create.createDir("C:\\Games\\src\\main", "main");
-        create.createDir("C:\\Games\\src\\test", "test");
-        create.createDir("C:\\Games\\res\\drawables", "drawables");
-        create.createDir("C:\\Games\\res\\vectors", "vectors");
-        create.createDir("C:\\Games\\res\\icons", "icons");
+        String[] path2 = new String[]{
+                "C:\\Games\\src\\main\\Main.java",
+                "C:\\Games\\src\\main\\Utils.java",
+                "C:\\Games\\temp\\temp.txt"
+        };
 
-        create.createFile("C:\\Games\\src\\main\\Main.java", "Main.java");
-        create.createFile("C:\\Games\\src\\main\\Utils.java", "Utils.java");
-        create.createFile("C:\\Games\\temp\\temp.txt", "temp.txt");
-
+        create.createDir(path);
+        create.createFile(path2);
 
         try (FileWriter writer = new FileWriter("C:\\Games\\temp\\temp.txt")) {
             StringBuilder str = create.getStr();
